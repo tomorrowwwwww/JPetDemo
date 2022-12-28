@@ -1,0 +1,57 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Jpet:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Jpet_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Jpet" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/el-api.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/jasper.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/jsp-api.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/catalina.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/ecj-4.20.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/jasper-el.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/jaspic-api.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-api.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-jni.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/catalina-ha.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/servlet-api.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-dbcp.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-jdbc.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-util.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/catalina-ant.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/catalina-ssi.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-coyote.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/websocket-api.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-cs.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-de.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-es.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-fr.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-ja.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-ko.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-ru.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/annotations-api.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/catalina-tribes.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-util-scan.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-websocket.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-pt-BR.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/tomcat-i18n-zh-CN.jar" />
+          <element id="file-copy" path="$USER_HOME$/software/codingtools/apache-tomcat-9.0.54/lib/catalina-storeconfig.jar" />
+          <element id="library" level="project" name="standard" />
+          <element id="library" level="project" name="jstl2" />
+          <element id="library" level="project" name="jstl3" />
+          <element id="library" level="project" name="standard2" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.30" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.28" />
+          <element id="library" level="project" name="mail" />
+          <element id="library" level="project" name="javax.mail-1.6.0" />
+          <element id="library" level="project" name="activation-1.1.1" />
+          <element id="library" level="project" name="fastjson-1.2.75" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Jpet/web/Web" />
+    </root>
+  </artifact>
+</component>
