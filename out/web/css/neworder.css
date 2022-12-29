@@ -1,0 +1,186 @@
+
+.c li{
+    width:100px;
+    display: inline;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.table-1{
+    position: relative;
+    float: right;
+    right: -172px;
+}
+.return{
+    position: relative;
+    float: right;
+    right: -240px;
+}
+
+/*.body {*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
+.tab {
+    width: 50%;
+    height: 50px;
+    align-content: center;
+    border: 1px solid rgb(222, 96, 19);
+}
+.tab li{
+    float: left;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    color: #131212;
+    background-color: rgb(213, 90, 14);
+    list-style: none;
+}
+.tab li:hover {
+    float: left;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    color: rgb(23, 22, 22);
+    background-color: #d55a0e;
+    list-style: none;
+}
+
+.content {
+    display: none;
+}
+.tab li.pu {
+    float: left;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    color: rgb(23, 22, 22);
+    background-color: #d55a0e;
+    list-style: none;
+}
+
+
+/* 清除下划线 */
+u,
+a {
+    text-decoration: none;
+}
+/* 清除倾斜 */
+i,
+em {
+    font-style: normal;
+}
+/* 清除加粗 */
+b,
+strong {
+    font-weight: normal;
+}
+/* 清除文本默认大小和加粗 */
+h3,
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: normal;
+}
+table{
+    border: 1px solid gray;
+    border-collapse: collapse;/*合并单元格边框*/
+    width: 800px;
+    text-align: center;/*居中*/
+    margin:0px auto;
+    margin-top:60px;
+}
+th,td{
+    border: 1px solid gray;
+    /*border: none;!*去除默认边框*!*/
+    border-bottom: 1px solid gray;
+}
+tr{
+    height: 30px;
+    width: 60px;
+}
+td{
+    width: 60px;
+}
+thead th{
+    background-color: black;
+    color: white;
+}
+tbody tr:nth-child(2n){
+    background-color: #d87137;
+    cursor: pointer;
+    color: white;
+}
+tbody tr:nth-child(2n-1){
+    background-color: black;
+    cursor: pointer;/*鼠标放上去后变成小手*/
+    color: #EEEEEE;
+}
+h2{
+    margin-top: 100px;
+}
+
+
+#but button {
+    margin-top: 18px; /* 设置合适的上部外框的宽度，增加与上面的password框的距离 */
+    text-align: center;
+    font-size: 15px; /* 修改按钮文字的大小 */
+    /* 设置按钮里面字体颜色 */
+    color: #111111;
+    background-color:#d87137;
+}
+
+#re button:nth-child(2n) {
+    margin-top: 18px; /* 设置合适的上部外框的宽度，增加与上面的password框的距离 */
+    text-align: center;
+    font-size: 15px; /* 修改按钮文字的大小 */
+    /* 设置按钮里面字体颜色 */
+    color: #f8f4f4;
+    background-color: #100f0f;
+}
+
+#re button:nth-child(2n-1) {
+    margin-top: 18px; /* 设置合适的上部外框的宽度，增加与上面的password框的距离 */
+    text-align: center;
+    font-size: 15px; /* 修改按钮文字的大小 */
+    /* 设置按钮里面字体颜色 */
+    color: #f8f4f4;
+    background-color: #d87137;
+}
+
+#button1{
+    width: 100px;
+    height:30px;
+    color: white;
+    background-color: black;
+    border: 1px solid #ffffff;
+}
+#button2{
+    width: 100px;
+    height:30px;
+    color: white;
+    background-color: black;
+    border: 1px solid #ffffff;
+}
+
+
+.d{
+    position: relative;
+    float: right;
+    right: -172px;
+}
+
+
+
+

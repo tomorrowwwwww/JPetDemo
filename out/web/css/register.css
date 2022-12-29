@@ -1,0 +1,65 @@
+table{
+    border: 1px solid gray;
+    border-collapse: collapse;/*合并单元格边框*/
+    width: 800px;
+    text-align: center;/*居中*/
+    margin:0px auto;
+    margin-top:60px;
+
+}
+th,td{
+    border: 1px solid gray;
+    /*border: none;!*去除默认边框*!*/
+    border-bottom: 1px solid gray;
+}
+tr{
+    height: 30px;
+    width: 60px;
+}
+
+td{
+    width: 60px;
+}
+thead th{
+    background-color: black;
+    color: white;
+}
+tbody tr:nth-child(2n){
+    background-color: #d87137;
+    cursor: pointer;
+    color: white;
+}
+tbody tr:nth-child(2n-1){
+    background-color: black;
+    cursor: pointer;/*鼠标放上去后变成小手*/
+    color: #EEEEEE;
+}
+h2{
+    margin-top: 100px;
+}
+#btn_sub{
+    width: 100px;
+    height:30px;
+    color: white;
+    background-color: black;
+    border: 1px solid #ffffff;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 1000px;
+    margin-top: 30px;
+    padding-right: 5px;
+}
+#btn_reset{
+    width: 100px;
+    height:30px;
+    color: white;
+    background-color: black;
+    border: 1px solid #ffffff;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 30px;
+    padding-right: 5px;
+}
+.login-form-error{
+    margin: 0px auto;
+}
