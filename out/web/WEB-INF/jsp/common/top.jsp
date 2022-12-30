@@ -55,7 +55,7 @@
                 <p>欢迎用户${sessionScope.loginAccount}登录!</p>
             </div>
             </c:if>
-            <li><a href="help.html">?</a> </li>
+            <li><a href="help">?</a> </li>
         </ul>
 
     </div>

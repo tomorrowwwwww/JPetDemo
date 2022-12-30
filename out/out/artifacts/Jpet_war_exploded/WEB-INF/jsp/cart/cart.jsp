@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>ShoppigCart</title>
-  <link rel="stylesheet" type="text/css" href="css/cart1.css">
+  <link rel="stylesheet" type="text/css" href="css/cart.css">
 <%--  <script>--%>
 <%--    function updateCart(Id)--%>
 <%--    {--%>
