@@ -2,23 +2,25 @@
 <%@ include file="../common/top.jsp"%>
 
 
+
 <head>
   <meta charset="UTF-8">
   <title>ShoppigCart</title>
-  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" type="text/css" href="css/cart.css">
 </head>
 <body>
-<div id="BackLink" align="right">
+<div class="return">
+<div id="BackLink" >
   <a href="mainForm">Return to Main Menu</a>
 </div>
+</div>
+<div class="table-1" align="center">
+  <h2 align="center" style="font-size:30px;"><b>Shopping Cart</b></h2>
+  <div>
 
-<div id="Catalog" align="center">
-
-  <div id="Cart">
-
-    <form action="" method="post">
       <table border="1" align="center" margin="auto" text-align:="center" vertical-align="middle" cellspacing="0" cellpadding="0" >
-        <caption align="center" style="font-size:30px;"><b>Shopping Cart</b></caption>
+<%--        <caption align="center" style="font-size:30px;"><b>Shopping Cart</b></caption>--%>
+<%--        &nbsp;&nbsp;&nbsp;--%>
         <tr>
           <td width="80" style="border:1px solid black;vertical-align: middle;text-align: center;">Item ID</td>
           <td width="100" style="border:1px solid black;vertical-align: middle;text-align: center;">Product ID</td>
@@ -50,33 +52,39 @@
             <td>
               <input type="text" id="quantity" class="quantity" name="${cartItem.item.itemId}" value="${cartItem.quantity}"/>
             </td>
-            <script src="../js/updateCart.js"></script>
-<%--            <script type="text/javascript" src="${pageContext.request.contextPath }/js/updateCart.js"></script>--%>
+            <script type="text/javascript" src="../js/updateCart.js"></script>
+
 
             <td><fmt:formatNumber value="${cartItem.item.listPrice}"
                                   pattern="$#,##0.00" /></td>
-            <td class="totalPrice"><fmt:formatNumber value="${cartItem.total}"
-                                                     pattern="$#,##0.00" /></td>
+            <td class="totalPrice">
+                <fmt:formatNumber value="${cartItem.total}" pattern="$#,##0.00" />
+            </td>
+
             <td>
               <a href="removeCartItem?workingItemId=${cartItem.item.itemId}" class="button" >Remove</a>
             </td>
           </tr>
         </c:forEach>
         <tr>
-          <td colspan="7" id="subtotal">
+          <td colspan="8" id="subtotal">
             Sub Total: <fmt:formatNumber value="${sessionScope.cart.subTotal}" pattern="$#,##0.00" />
           </td>
-          <td>
-            <input type="submit" name="updateCartQuantities" value="Update Cart" />
-          </td>
+<%--          <td>--%>
+<%--              <input type="submit" οnclick="window.location.href('updateCartQuantities')" value="Update Cart">--%>
+<%--                <input type="submit" value="Update Cart" name="updateCartQuantities">--%>
+<%--            <input type="submit" name="updateCartQuantities" value="Update Cart" />--%>
+<%--          </td>--%>
         </tr>
       </table>
-    </form>
 
   <c:if test="${sessionScope.cart.numberOfItems > 0 }">
-      <a href="newOrderForm" class="Button">Proceed to Checkout</a>
-  </c:if></div>
+      <a href="newOrderForm" class="Button" id="button">Proceed to Checkout</a>
+  </c:if>
+  </div>
+
   <div id="Separator">&nbsp;</div>
+
 </div>
 </body>
 

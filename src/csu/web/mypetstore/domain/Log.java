@@ -30,7 +30,9 @@ public class Log {
      * @param s
      */
     synchronized public static String log(Object ...s) {
+        //清空字符串
         bb.delete(0, bb.length());
+        //获取时间
         bb.append(time());
         bb.append(marsk);
         // 获取调用的位置

@@ -7,8 +7,58 @@ import csu.web.mypetstore.persistance.impl.DBUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class AccountDaoImpl implements AccountDao{
+    private static final String FIND_ACCOUNT_BY_USERNAME = "select " +
+            "signon.username, " +
+            "account.email, " +
+            "account.firstname, " +
+            "account.lastname, " +
+            "account.status, " +
+            "account.addr1 as address1, " +
+            "account.addr2 as address2, " +
+            "account.city, " +
+            "account.state, " +
+            "account.zip, " +
+            "account.country, " +
+            "account.phone, " +
+            "profile.langpref as languagePreference, " +
+            "profile.favcategory as favouriteCategoryId, " +
+            "profile.mylistopt as listOption, " +
+            "profile.banneropt as bannerOption, " +
+            "bannerdata.bannername " +
+            "from account, profile, signon, bannerdata " +
+            "where account.username = ? " +
+            "and signon.username = account.username " +
+            "and profile.userid = account.username " +
+            "and profile.favcategory = bannerdata.favcategory";
+    private static final String FIND_ACCOUNT_BY_USERNAME_AND_PASSWORD = "select " +
+            "signon.username, " +
+            "account.email, " +
+            "account.firstname, " +
+            "account.lastname, " +
+            "account.status, " +
+            "account.addr1 as address1, " +
+            "account.addr2 as address2, " +
+            "account.city, " +
+            "account.state, " +
+            "account.zip, " +
+            "account.country, " +
+            "account.phone, " +
+            "profile.langpref as languagePreference, " +
+            "profile.favcategory as favouriteCategoryId, " +
+            "profile.mylistopt as listOption, " +
+            "profile.banneropt as bannerOption, " +
+            "bannerdata.bannername " +
+            "from account, profile, signon, bannerdata " +
+            "where account.username = ? " +
+            "and signon.password = ? " +
+            "and signon.username = account.username " +
+            "and profile.userid = account.username \n" +
+            "and profile.favcategory =  bannerdata.favcategory";
+
+
     private static final String UPDATE_ACCOUNT_STRING = "UPDATE ACCOUNT SET" +
             "      EMAIL = ?," +
             "      FIRSTNAME = ?," +
@@ -57,10 +107,88 @@ public class AccountDaoImpl implements AccountDao{
 
     private static final String FIND_USER_BY_NAME="SELECT *FROM SIGNON WHERE username=?";
 
+
+//    @Override
+//    public Account getAccountByUsername(String username) {
+//        Account account = null;
+//        try {
+//            Connection connection= DBUtil.getConnection();
+//            PreparedStatement preparedStatement = connection.prepareStatement(getAccountByUsernameString);
+//            preparedStatement.setString(1, username);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//
+//            if (resultSet.next()) {
+//                account = new Account();
+//                account.setUsername(resultSet.getString(1));
+//                account.setEmail(resultSet.getString(2));
+//                account.setFirstName(resultSet.getString(3));
+//                account.setLastName(resultSet.getString(4));
+//                account.setStatus(resultSet.getString(5));
+//                account.setAddress1(resultSet.getString(6));
+//                account.setAddress2(resultSet.getString(7));
+//                account.setCity(resultSet.getString(8));
+//                account.setState(resultSet.getString(9));
+//                account.setZip(resultSet.getString(10));
+//                account.setCountry(resultSet.getString(11));
+//                account.setPhone(resultSet.getString(12));
+//                account.setLanguagePreference(resultSet.getString(13));
+//                account.setFavouriteCategoryId(resultSet.getString(14));
+//                account.setListOption(resultSet.getString(15));
+//                account.setBannerOption(resultSet.getString(16));
+//                account.setBannerName(resultSet.getString(17));
+//            }
+//
+//            DBUtil.closeResultSet(resultSet);
+//            DBUtil.closePreparedStatement(preparedStatement);
+//            DBUtil.closeConnection(connection);
+//        } catch (Exception e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//        return account;
+//    }
     @Override
     public Account getAccountByUsername(String username) {
-        return null;
+        Account account = null;
+        try {
+            Connection connection = DBUtil.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(FIND_ACCOUNT_BY_USERNAME);
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()){
+                account = new Account();
+                resultSetToAccount(resultSet, account);
+            }
+            DBUtil.closeResultSet(resultSet);
+            DBUtil.closePreparedStatement(preparedStatement);
+            DBUtil.closeConnection(connection);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            return account;
+        }
+//        return null;
     }
+    private void resultSetToAccount(ResultSet resultSet, Account account) throws SQLException {
+        account.setUsername(resultSet.getString(1));
+        account.setEmail(resultSet.getString(2));
+        account.setFirstName(resultSet.getString(3));
+        account.setLastName(resultSet.getString(4));
+        account.setStatus(resultSet.getString(5));
+        account.setAddress1(resultSet.getString(6));
+        account.setAddress2(resultSet.getString(7));
+        account.setCity(resultSet.getString(8));
+        account.setState(resultSet.getString(9));
+        account.setZip(resultSet.getString(10));
+        account.setCountry(resultSet.getString(11));
+        account.setPhone(resultSet.getString(12));
+        account.setLanguagePreference(resultSet.getString(13));
+        account.setFavouriteCategoryId(resultSet.getString(14));
+        account.setListOption(resultSet.getString(15));
+        account.setBannerOption(resultSet.getString(16));
+        account.setBannerName(resultSet.getString(17));
+    }
+
 
     @Override
     public boolean findAccountByAccountName(String username){
@@ -83,6 +211,8 @@ public class AccountDaoImpl implements AccountDao{
         }
         return false;
     }
+
+
 
     @Override
     public Account getAccountByUsernameAndPassword(Account account) {

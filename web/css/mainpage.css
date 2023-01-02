@@ -1,9 +1,4 @@
 
-/*body{*/
-/*    background: url(../images/mainpage.jpg);*/
-/*    background-size: cover;*/
-/*    background-attachment: fixed;*/
-/*}*/
 
 #Footer{
     background-color: black;
@@ -80,17 +75,18 @@ body>#Banner {
 }
 
 .header_con form {
-    width: 227px;
-    height: 61px;
+    width: 226px;
+    height: 87px;
     /* background: orangered; */
     float: right;
-    padding-top: 10px;
-    padding-right: 20px;
+    padding-top: 19px;
+    padding-right: 0px;
+    margin-right: -300px;
 }
 
 .header_con .search {
     width: 195px;
-    height: 26px;
+    height: 28px;
     background: #f1f1f1;
     border: 1px solid #e5e5e5;
     /* 清除右侧边框 */
@@ -136,7 +132,7 @@ body>#Banner {
     background-color:#bebebe;
     width:120px;
     text-align:center;
-    padding:4px;
+    padding:8px;
     text-decoration:none;
     text-transform:uppercase;
 }
@@ -194,10 +190,18 @@ h1:nth-child(2){
 
 #searchlist{
 
-    margin-left: 1180px;
-    margin-bottom: 1200px;
-    margin-top: -1000px;
-    margin-right: -300px;
+
+    background: #ffffff;
+    position: relative;
+    width: 224px;
+    height: 487px;
+    margin-top: -727px;
+    margin-left: 1155px;
+    text-align: center;
+    float: left;
+    opacity: 0.8;
+    display: none;
+
 
 }
 
@@ -207,25 +211,29 @@ h1:nth-child(2){
 
 
 #searchMsg{
-    color: #EEEEEE;
-    margin-top: 5%;
+    color: #4652b9;
+    float: right;
+    margin-top: -742px;
+    margin-right: -12px;
+    width: 0px;
+    opacity: 0.5;
+
 }
 #navv{
-    margin-left: 480px;
-    margin-bottom: 1000px;
-    margin-top: -500px;
-    margin-right: -100px;
+    position: relative;
+    top: -449px;
+    right: -476px;
 
 }
 
 #nav {
-    height: 58px;
+    height: 70px;
     background: black;
 }
 
 #nav .nav_con {
-    width: 1002px;
-    height: 58px;
+    width: 1656px;
+    height: 70px;
     background: black;
     margin: 0 auto;
 }
@@ -234,14 +242,14 @@ h1:nth-child(2){
 /* 导航横向排列 */
 
 #nav .nav_con li {
-    width: 118px;
-    height: 58px;
+    width: 83px;
+    height: 70px;
     float: left;
     background: black;
     /* 左右居中 */
     text-align: center;
     /* 上下居中 */
-    line-height: 58px;
+    line-height: 70px;
     border-left: 1px solid #4a4a4a;
     font-size: 12px;
 }
@@ -249,9 +257,15 @@ h1:nth-child(2){
 .nav_con li a {
     color: white;
 }
+#lilist{
+    float: left;
+    position: relative;
+    left: 132px;
+    height: 70px;
+}
 
 .margin-left {
-    margin-left: 25px;
+    margin-left: -87px;
     border-left: none !important;
 }
 /* 重置样式表 */
@@ -259,6 +273,8 @@ h1:nth-child(2){
 * {
     margin: 0;
     padding: 0;
+    margin-left: -119px;
+    margin: -1px;
 }
 
 
@@ -267,6 +283,7 @@ h1:nth-child(2){
 body {
     font-size: 16px;
     font-family: "微软雅黑";
+    width: 1080px;
 }
 
 
@@ -327,6 +344,8 @@ img {
 
 input {
     outline: none;
+    border-style: none;
+    /*line-height: 2.319em;*/
 }
 #Catalog {
     padding: 1ex;
@@ -429,6 +448,14 @@ a.Button:hover {
     empty-cells: show;
 }
 
+#Product p{
+    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+
+    margin: 0ex 0ex 0ex 0ex;
+    padding: 2ex;
+
+}
+
 #tablePoosition{
     margin-left: 400px;
     margin-bottom: 100px;
@@ -445,64 +472,47 @@ a.Button:hover {
     color: white;
     background-color:#d87137;
 }
-/*#Cartt thead th {*/
+#productAutoList{
+    margin: 0px;
+    padding: 0px;
+    border: 0px solid #aaa;
+    text-align: left;
+
+}
+.productAutoItem{
+    list-style: none;
+    height: 29.5px;
+    line-height: 29.5px;
+    font-size: 15px;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 1px;
+    border-bottom: 1px solid #aaa;
+    cursor: pointer;
+}
 
 
-/*    background-color: black;*/
-/*    color: white;*/
-/*}*/
+#account1{
+    position: relative;
+    float: right;
+    top: 12px;
+    left: 720px;
+}
+#account2{
+    position: relative;
+    float: right;
+    top: 12px;
+    right: -430px;
 
-/*#Cartt tbody tr:nth-child(2n){*/
-/*    background-color: #d87137;*/
-/*    cursor: pointer;*/
-/*    color: white;*/
-/*}*/
-/*#Carttt body tr:nth-child(2n-1){*/
-/*    background-color: black;*/
-/*    cursor: pointer;!*鼠标放上去后变成小手*!*/
-/*    color: #EEEEEE;*/
-/*}*/
-/*#Cartt h2{*/
-/*    margin-top: 100px;*/
-/*}*/
-
-/*#Cartt #btn_sub{*/
-/*    width: 100px;*/
-/*    height:30px;*/
-/*    color: white;*/
-/*    background-color: black;*/
-/*    border: 1px solid #ffffff;*/
-/*    text-align: center;*/
-/*    margin-right: 10px;*/
-/*    margin-left: 1000px;*/
-/*    margin-top: 30px;*/
-/*    padding-right: 5px;*/
-/*}*/
-
-/*#Cartt#btn_reset{*/
-/*    width: 100px;*/
-/*    height:30px;*/
-/*    color: white;*/
-/*    background-color: black;*/
-/*    border: 1px solid #ffffff;*/
-/*    text-align: center;*/
-/*    margin-right: 10px;*/
-/*    margin-top: 30px;*/
-/*    padding-right: 5px;*/
-/*}*/
-/*#Cartt #but button {*/
-/*    margin-top: 18px; !* 设置合适的上部外框的宽度，增加与上面的password框的距离 *!*/
-/*    text-align: center;*/
-/*    font-size: 15px; !* 修改按钮文字的大小 *!*/
-/*    !* 设置按钮里面字体颜色 *!*/
-/*    color: white;*/
-/*    background-color:#d87137;*/
-/*}*/
-
-
-
-
-
+}
+.img{
+    max-width:100%;
+    max-height:100%;
+    width:45px;
+    height:45px;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
 
 

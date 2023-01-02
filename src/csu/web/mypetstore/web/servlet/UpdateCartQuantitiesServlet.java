@@ -4,6 +4,7 @@ import csu.web.mypetstore.domain.Account;
 import csu.web.mypetstore.domain.Cart;
 import csu.web.mypetstore.domain.CartItem;
 import csu.web.mypetstore.service.CartItemsService;
+import csu.web.mypetstore.service.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -61,6 +62,19 @@ public class UpdateCartQuantitiesServlet extends HttpServlet {
                 }
             }
         }
+        if(account != null){
+            HttpServletRequest httpRequest= request;
+            String strBackUrl = "http://" + request.getServerName() + ":" + request.getServerPort()
+                    + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+            LogService logService = new LogService();
+//最后加入的信息“XXXXX”应当为该界面的信息以及一些商品信息
+            String time = logService.logInfo(" ") ;
+            String page=strBackUrl;
+            logService.insertLogInfo(account.getUsername(), time,page,"更新购物车商品数量"+" "+cartItemIterator);
+
+        }
+
         request.getRequestDispatcher(CART_FORM).forward(request, response);
         response.sendRedirect(CART_FORM);
     }

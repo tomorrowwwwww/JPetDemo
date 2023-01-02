@@ -1,3 +1,13 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+</head>
+<body>
+<div class="table-1">
 <table>
     <tr>
         <td>First name:</td>
@@ -67,3 +77,5 @@
     <input type="submit" name="saveAccount" value="Save Account Information" />
 
 </table>
+</div>
+</body>

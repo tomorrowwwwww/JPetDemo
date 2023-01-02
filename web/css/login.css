@@ -187,8 +187,9 @@ iframe {
 
 .login {
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
 }
+
 
 .container-login100 {
     width: 100%;
@@ -364,6 +365,8 @@ iframe {
     width: 500px;
     background-color:#b15f3f;
     border-radius: 10%;
+
+
 }
 
 .toTip{
@@ -438,3 +441,4 @@ iframe {
         padding: 100px 15px 33px 15px;
     }
 }
+

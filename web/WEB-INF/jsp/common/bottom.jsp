@@ -7,6 +7,6 @@
     </div>
 
 </div>
-
+<script type="text/javascript" src="js/productAuto.js"></script>
 </body>
 </html>

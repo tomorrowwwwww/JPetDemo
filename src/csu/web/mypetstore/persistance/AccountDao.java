@@ -14,7 +14,9 @@ import csu.web.mypetstore.domain.Account;
 public interface AccountDao {
     Account getAccountByUsername(String username);
 
+
     Account getAccountByUsernameAndPassword(Account account);
+
 
     public boolean insertAccount(Account account);
 

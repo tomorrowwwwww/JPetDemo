@@ -37,8 +37,9 @@ public class ProductFormServlet extends HttpServlet {
 
             LogService logService = new LogService();
 //最后加入的信息“XXXXX”应当为该界面的信息以及一些商品信息
-            String logInfo = logService.logInfo(" ") + strBackUrl + name;
-            logService.insertLogInfo(account.getUsername(), logInfo);
+            String time = logService.logInfo(" ") ;
+            String page=strBackUrl;
+            logService.insertLogInfo(account.getUsername(), time,page,"product"+"  "+productId);
 
         }
 //        this.doGet(req, resp);
@@ -54,17 +55,45 @@ public class ProductFormServlet extends HttpServlet {
         httpSession.setAttribute("itemList", itemList);
         req.getRequestDispatcher(PRODUCT_FORM).forward(req, resp);
     }
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
+//        productId = req.getParameter("productId");
+//        catalogService = new CatalogService();
+//        Product product = catalogService.getProduct(productId);
+//        List<Item> itemList =  catalogService.getItemListByProduct(productId);
+//        HttpSession httpSession = req.getSession();
+//        httpSession.setAttribute("product", product);
+//        httpSession.setAttribute("itemList", itemList);
+//        req.getRequestDispatcher(PRODUCT_FORM).forward(req, resp);
+//        req.getRequestDispatcher(CART_FORM).forward(req, resp);
+//    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
-        productId = req.getParameter("productId");
+        String productId = req.getParameter("productId");
+        String name=req.getParameter("name");
         catalogService = new CatalogService();
-        Product product = catalogService.getProduct(productId);
-        List<Item> itemList =  catalogService.getItemListByProduct(productId);
-        HttpSession httpSession = req.getSession();
-        httpSession.setAttribute("product", product);
-        httpSession.setAttribute("itemList", itemList);
-        req.getRequestDispatcher(PRODUCT_FORM).forward(req, resp);
-        req.getRequestDispatcher(CART_FORM).forward(req, resp);
+        if (productId!=null) {
+            Product product = catalogService.getProduct(productId);
+            List<Item> itemList =  catalogService.getItemListByProduct(productId);
+            HttpSession httpSession = req.getSession();
+            httpSession.setAttribute("product", product);
+            httpSession.setAttribute("itemList", itemList);
+            req.getRequestDispatcher(PRODUCT_FORM).forward(req, resp);
+        }
+
+        if (name!=null){
+            Product product = catalogService.getProductByName(name);
+            String productId1=product.getProductId();
+            System.out.println(productId1+"cjvdvbh");
+            List<Item> itemList =  catalogService.getItemListByProduct(productId1);
+            HttpSession httpSession = req.getSession();
+            httpSession.setAttribute("product", product);
+            httpSession.setAttribute("itemList", itemList);
+            req.getRequestDispatcher(PRODUCT_FORM).forward(req, resp);
+        }
+
+
     }
 
 

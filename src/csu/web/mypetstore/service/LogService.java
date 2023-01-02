@@ -17,8 +17,8 @@ public class LogService {
         return log.logInfomation(s);
     }
 
-    public void insertLogInfo(String username, String logInfo){
-        logDAO.insertLog(username, logInfo);
+    public void insertLogInfo(String username, String time,String page,String ps){
+        logDAO.insertLog(username, time,page,ps);
     }
 }
 

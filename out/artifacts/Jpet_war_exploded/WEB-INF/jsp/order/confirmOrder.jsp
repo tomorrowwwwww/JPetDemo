@@ -1,28 +1,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../common/top.jsp"%>
 
-<div id="BackLink" align="right">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/cart.css">
+</head>
+<body>
+<div class="return">
+<div id="BackLink">
     <a href="mainForm">Return to Main Menu</a>
 </div>
-<div id="Catalog">
+</div>
+<div class="table-1" align="center">
     <div id="orderStep2">
-        <p1>
-            Now it's time to confirm the order
-        </p1>
-        <p2>Please confirm the information below</p2>
-        <p3>If there is no problem, please press continue</p3>
-        <p4>Then an order will be generated, So please check carefully</p4>
         <table>
             <tr>
-                <th align="center" colspan="2"><font size="4"><b>Order</b></font>
+                <td align="center" colspan="2"><font size="4"><b>Order</b></font>
                     <br />
                     <font size="3"><b> <fmt:formatDate
                             value="${sessionScope.order.orderDate}" pattern="yyyy/MM/dd hh:mm:ss" /></b></font>
-                </th>
+                </td>
             </tr>
-
             <tr>
-                <th colspan="2">Billing Address</th>
+                <td colspan="2">Billing Address</td>
             </tr>
             <tr>
                 <td>First name:</td>
@@ -57,7 +57,7 @@
                 <td><c:out value="${sessionScope.order.billCountry}" /></td>
             </tr>
             <tr>
-                <th colspan="2">Shipping Address</th>
+                <td colspan="2">Shipping Address</td>
             </tr>
             <tr>
                 <td>First name:</td>
@@ -93,6 +93,16 @@
             </tr>
 
         </table>
-            <button><a href="submitOrder" class="Button">Confirm</a></button>
+
 </div>
-<%@ include file="../common/bottom.jsp"%>
+
+        <button class="b">
+            <a href="submitOrder" class="Button">Confirm</a>
+        </button>
+
+
+
+<%--    <button id="butt"><a href="submitOrder" class="Button" >Confirm</a></button>--%>
+</div>
+
+</body>

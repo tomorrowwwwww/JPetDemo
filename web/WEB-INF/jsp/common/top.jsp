@@ -12,25 +12,28 @@
             background-attachment: fixed;
         }
     </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="header_con">
-    <!-- h1里面放logo哦 -->
+    <!--logo-->
     <h1>
         <img src="images/logo2.jpg" alt="">
     </h1>
 
     <!-- 头部右侧表单标签-->
+
     <form action="searchproduct" method="post" id="nav_search">
-        <input type="text" class="search" name="keyword">
+        <input type="text" class="search" name="keyword" id="keyword">
         <div>
             <button type="submit" class="btn" id="searchBtn" >
             </button>
         </div>
     </form>
 </div>
+</div>
 
-<!-- 导航栏平铺部分：会显示黑色啦 -->
+<!-- 导航栏部分 -->
 
 <div id="nav">
     <!-- 导航栏版心部分 -->
@@ -38,15 +41,49 @@
         <ul id="lilist">
             <li class="margin-left"><a href="cartForm"><img align="center" src="images/cart.jpg" /></a>
                 <c:if test="${sessionScope.loginAccount ==null }">
-            <li id="li1">  <a href="signonForm">Sign In</a></li>
+                    <%--                    <li>  <a href="signonForm">Sign In</a></li>--%>
+                <div id="account1" class="img">
+                    <a href="signonForm"> <img src="images/default_signin.jpg"></a>
+                </div>
+                </c:if>
+                <c:if test="${sessionScope.loginAccount !=null }">
+            <li><a href="signoutForm">Sign Out</a></li>
+            <li><a href="myOrdersForm">My Orders</a></li>
+                <%--                        <li id="li3"> <a href="editAccount">My Account</a></li>--%>
+            <div id="account2" class="img">
+                <a href="editAccount"><img src="images/default_signout.jpg"></a>
+                <p>欢迎用户${sessionScope.loginAccount}登录!</p>
+            </div>
             </c:if>
-            <c:if test="${sessionScope.loginAccount !=null }">
-                <li id="li2" ><a href="signoutForm">Sign Out</a></li>
-                <li id="li3"> <a href="editAccount">My Account</a></li>
-                <li id="li4"> <a href="myOrdersForm">My Orders</a></li>
-            </c:if>
-
+            <li><a href="help">?</a> </li>
         </ul>
-        <li><a href="help.html">?</a> </li>
+
     </div>
 </div>
+</body>
+
+
+<script>
+    function Search() {
+        //获取关键字
+        var keyword=document.getElementById(keyword);
+        //传到后端
+        console.log(keyword+12345);
+        xmlhttp=new XMLHttpRequest();
+        if(xmlhttp){
+            xmlhttp.open("post","top.jsp",true);
+            xmlhttp.onreadystatechange=function(){
+                if(xmlhttp.readyState===4){
+                    if((xmlhttp.status>=200&&xmlhttp.status<=300)||xmlhttp.status==304){
+                        var productlist=xmlhttp.responseText;
+                        console.log(productlist);
+                    }
+                }
+
+            }
+            xmlhttp.send(keyword);
+        }
+
+
+    }
+</script>

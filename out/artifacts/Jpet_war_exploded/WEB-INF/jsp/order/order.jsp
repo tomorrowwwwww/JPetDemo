@@ -1,8 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../common/top.jsp"%>
 
-<div id="BackLink" align="right">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/cart.css">
+</head>
+<body>
+<div class="return">
+<div id="BackLink">
     <a href="mainForm">Return to Main Menu</a>
+</div>
 </div>
 
 <c:if test="${requestScope.msg!=null}">
@@ -12,16 +19,16 @@
         </li>
     </ul>
 </c:if>
-<div id="Catalog">
+<div class="table-1" align="center">
     <div id="orderStep3">
         <table>
             <tr>
-                <th align="center" colspan="2">Order #${sessionScope.order.orderId}
+                <td align="center" colspan="2">Order #${sessionScope.order.orderId}
                     <fmt:formatDate value="${sessionScope.order.orderDate}"
-                                    pattern="yyyy/MM/dd HH:mm:ss" /></th>
+                                    pattern="yyyy/MM/dd HH:mm:ss" /></td>
             </tr>
             <tr>
-                <th colspan="2">Payment Details</th>
+                <td colspan="2">Payment Details</td>
             </tr>
             <tr>
                 <td>Card Type:</td>
@@ -37,7 +44,7 @@
                 <td><c:out value="${sessionScope.order.expiryDate}" /></td>
             </tr>
             <tr>
-                <th colspan="2">Billing Address</th>
+                <td colspan="2">Billing Address</td>
             </tr>
             <tr>
                 <td>First name:</td>
@@ -72,7 +79,7 @@
                 <td><c:out value="${sessionScope.order.billCountry}" /></td>
             </tr>
             <tr>
-                <th colspan="2">Shipping Address</th>
+                <td colspan="2">Shipping Address</td>
             </tr>
             <tr>
                 <td>First name:</td>
@@ -117,11 +124,11 @@
                 <td colspan="2">
                     <table>
                         <tr>
-                            <th>Item ID</th>
-                            <th>Description</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Total Cost</th>
+                            <td>Item ID</td>
+                            <td>Description</td>
+                            <td>Quantity</td>
+                            <td>Price</td>
+                            <td>Total Cost</td>
                         </tr>
                         <c:forEach var="lineItem" items="${sessionScope.order.lineItems}">
                             <tr>
@@ -148,19 +155,24 @@
                             </tr>
                         </c:forEach>
                         <tr>
-                            <th colspan="5">Total: <fmt:formatNumber
-                                    value="${sessionScope.order.totalPrice}" pattern="$#,##0.00" /></th>
+                            <td colspan="5">Total: <fmt:formatNumber
+                                    value="${sessionScope.order.totalPrice}" pattern="$#,##0.00" /></td>
                         </tr>
                     </table>
                 </td>
             </tr>
 
         </table>
-        <button>
-            <a href="myOrdersForm" class="button">Check order</a>
-        </button>
+
     </div>
+
+        <button class="b">
+            <a href="myOrdersForm" class="Button">Check order</a>
+        </button>
+
 </div>
+
+</body>
 <script type="text/javascript">
     $('#progressBar div').css('background', 'linear-gradient(to right, green 50%, green 50%)');
     $('#progressBar>button:nth-child(2)').css('background', 'green');

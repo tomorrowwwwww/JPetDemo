@@ -6,9 +6,15 @@
 package csu.web.mypetstore.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Account implements Serializable {
     private static final long serialVersionUID = 8751282105532159742L;
+    public static  String accountUsername;
+    public  static String accountPassword;
+    public static Object cart1 = new Cart(); //存放购物车中的信息
+    public static List<Order> MyOrders = new ArrayList<Order>();//存取订单信息
     private String username;
     private String password;
     private String email;
@@ -28,8 +34,8 @@ public class Account implements Serializable {
     private String bannerOption;
     private String bannerName;
 
-    public Account() {
-    }
+//    public Account() {
+//    }
 
     public String getUsername() {
         return this.username;
@@ -173,4 +179,5 @@ public class Account implements Serializable {
     public void setBannerName(String bannerName) {
         this.bannerName = bannerName;
     }
+
 }

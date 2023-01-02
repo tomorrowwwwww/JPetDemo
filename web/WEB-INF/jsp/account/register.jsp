@@ -108,7 +108,7 @@
     <div >
         <tr>
             <td colspan="2" ><input name="submit" type="submit" id="btn_sub" onclick="disp_alert()" value="Register"></td>
-            <td colspan="2" ><input name="back"  value="返回登录界面" id="btn_reset" onclick="window.location.href='signon.jsp'"></td>
+            <td colspan="2" ><input name="back"  value="返回登录界面" id="btn_reset" onclick="window.location.href='signonForm'"></td>
         </tr>
     </div>
 </form>

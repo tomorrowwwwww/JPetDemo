@@ -189,6 +189,57 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>HelpServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.HelpServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelpServlet</servlet-name>
+        <url-pattern>/help</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.IndexServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.UpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateFormServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.UpdateFormServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateFormServlet</servlet-name>
+        <url-pattern>/updateForm</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>CategoryShowJsServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.CategoryShowJsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CategoryShowJsServlet</servlet-name>
+        <url-pattern>/categoryShowJsServlet</url-pattern>
+    </servlet-mapping>
+
     <!--验证码设置-->
     <servlet>
         <servlet-name>VerificationCode</servlet-name>

@@ -56,6 +56,16 @@ public class DBUtil {
         }
     }
 
+    public static void main(String[] args) {
+        try {
+            Connection connection = getConnection();
+            System.out.print(connection);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 //    public static void main(String[] args) {
 //        System.out.println(getConnection());
 //    }

@@ -5,6 +5,7 @@ import csu.web.mypetstore.domain.Cart;
 import csu.web.mypetstore.domain.CartItem;
 import csu.web.mypetstore.domain.Order;
 import csu.web.mypetstore.service.CartItemsService;
+import csu.web.mypetstore.service.LogService;
 import csu.web.mypetstore.service.OrderService;
 
 import javax.servlet.ServletException;
@@ -24,29 +25,33 @@ public class SubmitOrderServlet extends HttpServlet {
     private Cart cart;
     private Order order;
     private OrderService orderService;
-    private Account account;
+//    private Account account;
     private List<CartItem> cartItemList;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+//别改，有用
         HttpSession session = request.getSession();
+        HttpSession httpSession = request.getSession();
+        Account account = (Account)httpSession.getAttribute("loginAccount");
+
 
         cart = (Cart) session.getAttribute("cart");
         order =(Order) session.getAttribute("order");
-        account = (Account) session.getAttribute("account");
-//        CartItemsService cartItemsService = new CartItemsService();
-//        cartItemList = cartItemsService.getCartByUsername(account.getUsername());
-//        for (int i=0;i<cartItemList.size();i++){
-//            cartItemsService.removeItem(cartItemList.get(i));
-        //}
-//        cart = new Cart();
-//        session.setAttribute("cart",cart);
-//        orderService = new OrderService();
-//        orderService.insertOrder(order);
-//        request.setAttribute("msg","Thank you, your order has been submitted.");
+//        ！！！！！！！！！！！！！这句注释掉了，这里应该是.getAttribute("loginAccount"，已经在上面改了
+//        account = (Account) session.getAttribute("loginAccount");
+        CartItemsService cartItemsService = new CartItemsService();
+        cartItemList = cartItemsService.getCartByUsername(account.getUsername());
+        for (int i=0;i<cartItemList.size();i++){
+            cartItemsService.removeItem(cartItemList.get(i));
+        }
+        cart = new Cart();
+        session.setAttribute("cart",cart);
+        orderService = new OrderService();
+        orderService.insertOrder(order);
+        request.setAttribute("msg","Thank you, your order has been submitted.");
 //        request.getRequestDispatcher(ORDER).forward(request,response);
 
 

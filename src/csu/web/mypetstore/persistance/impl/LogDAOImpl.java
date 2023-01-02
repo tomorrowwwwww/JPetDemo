@@ -7,11 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class LogDAOImpl implements LogDAO {
-    private static final String insertLog ="insert into log(logUserId,logInfo) values(?,?)";
+    private static final String insertLog ="insert into log(logUserId,time,page,ps) values(?,?,?,?)";
     private static final String searchUsername ="select logUserId from log where logUserId=? ";
 
     @Override
-    public void insertLog(String username, String logInfo) {
+    public void insertLog(String username, String time,String page,String ps) {
 
         try {
             Connection connection = DBUtil.getConnection();
@@ -22,7 +22,9 @@ public class LogDAOImpl implements LogDAO {
 //            if (isExist) {
             preparedStatement=connection.prepareStatement(insertLog);
             preparedStatement.setString(1,username);
-            preparedStatement.setString(2, logInfo);
+            preparedStatement.setString(2, time);
+            preparedStatement.setString(3, page);
+            preparedStatement.setString(4, ps);
             int result = preparedStatement.executeUpdate();
 
             if (result == 1) {

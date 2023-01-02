@@ -23,7 +23,7 @@ public class EditAccountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        HttpSession session = req.getSession();
 //        Account account = (Account)session.getAttribute("account");
-        //日志
+//日志
         HttpSession httpSession = req.getSession();
         Account account = (Account)httpSession.getAttribute("loginAccount");
 
@@ -34,8 +34,9 @@ public class EditAccountServlet extends HttpServlet {
 
             LogService logService = new LogService();
 //最后加入的信息“XXXXX”应当为该界面的信息以及一些商品信息
-            String logInfo = logService.logInfo(" ") + strBackUrl + "修改用户信息";
-            logService.insertLogInfo(account.getUsername(), logInfo);
+            String time = logService.logInfo(" ") ;
+            String page=strBackUrl;
+            logService.insertLogInfo(account.getUsername(), time,page,"修改用户信息");
 
         }
 

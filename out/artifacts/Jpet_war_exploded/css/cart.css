@@ -64,29 +64,6 @@ tbody tr:nth-child(2n-1){
 h2{
     margin-top: 100px;
 }
-#btn_sub{
-    width: 100px;
-    height:30px;
-    color: white;
-    background-color: black;
-    border: 1px solid #ffffff;
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 1000px;
-    margin-top: 30px;
-    padding-right: 5px;
-}
-#btn_reset{
-    width: 100px;
-    height:30px;
-    color: white;
-    background-color: black;
-    border: 1px solid #ffffff;
-    text-align: center;
-    margin-right: 10px;
-    margin-top: 30px;
-    padding-right: 5px;
-}
 
 #but button {
     margin-top: 18px; /* 设置合适的上部外框的宽度，增加与上面的password框的距离 */
@@ -113,4 +90,38 @@ h2{
     /* 设置按钮里面字体颜色 */
     color: #f8f4f4;
     background-color: #d87137;
+}
+#button{
+    width: 100px;
+    height:30px;
+    color: white;
+    background-color: #de6013;
+    border: 1px solid #111111;
+    text-align: center;
+    position: relative;
+    float: right;
+    right: 326px;
+}
+#b{
+    width: 100px;
+    height:30px;
+    color: white;
+    background-color: #de6013;
+    border: 1px solid #111111;
+    text-align: center;
+    position: relative;
+    float: right;
+    right: -33px;
+}
+
+
+.table-1{
+    position: relative;
+    float: right;
+    right: -172px;
+}
+.return{
+    position: relative;
+    float: right;
+    right: -240px;
 }

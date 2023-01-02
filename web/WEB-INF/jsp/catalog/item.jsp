@@ -2,13 +2,20 @@
 
 <%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 
-<div id="BackLink">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/cart.css">
+</head>
+<body>
+<div class="return">
+<div id="BackLink" >
   <a href="productForm?productId=${sessionScope.product.productId}">Return to ${sessionScope.product.productId}</a>
 </div>
+</div>
 
-<div id="Catalog">
+<div class="table-1" align="center">
 
-  <h2>${sessionScope.item.name}</h2>
+  <h2 align="center" style="font-size:30px;"><b>${sessionScope.item.name}</b></h2>
 
   <table>
     <tr>
@@ -49,5 +56,6 @@
   </table>
 
 </div>
+</body>
 
 <%@ include file="../common/bottom.jsp"%>

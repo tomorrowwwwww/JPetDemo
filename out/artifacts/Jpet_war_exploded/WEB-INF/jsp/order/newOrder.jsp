@@ -1,14 +1,49 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../common/top.jsp"%>
-<div id="BackLink" align="right">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/neworder.css">
+    <script>
+        window.onload = function () {
+            var tab = document.getElementById('tab');
+            //通过id获取tab元素
+            var li = tab.getElementsByTagName('li');
+            //获取tab元素中的所有li元素
+            var card = document.getElementById('card');
+            //通过id获取card元素
+            var content = card.getElementsByClassName('content');
+            //获取card元素下的所有content元素
+
+            for (let i = 0; i < li.length; i++) {//定义一个变量i=0，让其小于li元素的个数
+                li[i].onclick = function () {//为每一个li都添加一个onclick点击事件
+                    for (let e = 0; e < li.length; e++) {//该for循环使每一个li的class为空content的display为none
+                        li[e].className = "";            //每触发点击事件时，会清除之前被点击的li的样式并隐藏之前显示的content
+                        content[e].style.display = "none";
+                    }
+                    li[i].className = "pu";//为li添加一个为up的class
+                    content[i].style.display = "block";//使得content的display为block
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="return">
+<div id="BackLink">
     <a href="mainForm">Return to Main Menu</a>
 </div>
-<div id="Catalog">
-    <div id="orderStep1" >
+</div>
+<div >
+    <div>
         <form id="form1" action="newOrder" method="post">
+            <div class="table-1" align="center">
             <table>
                 <tr>
-                    <th colspan=2>Payment Details</th>
+                    <td colspan=2>Payment Details</td>
                 </tr>
                 <tr>
                     <td>Card Type:</td>
@@ -31,16 +66,18 @@
 
             </table>
             </br>
-            <div id="tab" align="left">
-                <ul>
-                    <li id="billingLi" class="on">Billing Address</li>
-                    <li id="shippingLi">Shipping Address</li>
+            <div id="tab" id="tab" align="center">
+                <ul class="c">
+                    <li><input type="button" id="button1" value="Billing Address" class="active"></li>
+                    <li><input type="button" id="button2" value="Shipping Address"></li>
                 </ul>
-                </br>
-                <div id="billing" style="display: inline;">
+            </div>
+
+            <div class="card" id="card" align="center">
+                <div id="billing" class="content" style="display:block;">
                     <table>
                         <tr>
-                            <th colspan=2>Billing Address</th>
+                            <td colspan=2>Billing Address</td>
                         </tr>
 
                         <tr>
@@ -77,10 +114,11 @@
                         </tr>
                     </table>
                 </div>
-                <div id="shipping" align="right" style="display: inline;">
+
+                <div id="shipping" class="content" style="display:block;">
                     <table>
                         <tr>
-                            <th colspan=2>Shipping Address</th>
+                            <td colspan=2>Shipping Address</td>
                         </tr>
                         <tr>
                             <td>First name:</td>
@@ -117,11 +155,16 @@
                     </table>
                 </div>
             </div>
-
-            <input id="Continue" type="submit" name="newOrder" value="Continue" class="button"/>
+                <input id="Continue" type="submit" name="newOrder" value="Continue" />
+            </div>
         </form>
     </div>
 
 </div>
-<script src="../js/newOrder.js"></script>
+
+</body>
+
+
+
+
 

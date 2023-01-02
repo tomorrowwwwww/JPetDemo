@@ -49,6 +49,13 @@
           <element id="library" level="project" name="javax.mail-1.6.0" />
           <element id="library" level="project" name="activation-1.1.1" />
           <element id="library" level="project" name="fastjson-1.2.75" />
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+          <element id="library" level="project" name="jsp-api" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.11" />
+          <element id="library" level="project" name="servlet-api" />
+          <element id="library" level="project" name="standard1" />
+          <element id="library" level="project" name="fastjson-1.2.83" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="Jpet/web/Web" />

@@ -21,32 +21,10 @@
         <p class="error-msg"><font color="red">${requestScope.registerMsg}</font></p >
       </div>
     </c:if>
-    <table border="1">
-      <h2 align="center">USER INFORMATION</h2>
-      <tbody>
-
-      <tr>
-        <td>USER ID:</td>
-        <td>${sessionScope.account.username}</td>
-      </tr>
-      <tr>
-        <td>NEW PASSWORD:</td>
-        <td >
-          <input type="text" name="password" autofocus="autofocus">
-        </td>
-      </tr>
-      <tr>
-        <td>REPEAT PASSWORD:</td>
-        <td >
-          <input type="text" name="repeatPassword">
-        </td>
-      </tr>
-      </tbody>
-    </table>
     <h2 align="center">ACCOUNT INFORMATION</h2>
     <%@ include file="accountField.jsp"%>
   </form>
 </div>
 </body>
-<%@ include file="../common/bottom.jsp"%>
+<%--<%@ include file="../common/bottom.jsp"%>--%>
 </html>

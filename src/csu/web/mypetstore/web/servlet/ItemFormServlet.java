@@ -6,6 +6,7 @@ import csu.web.mypetstore.domain.Category;
 import csu.web.mypetstore.domain.Item;
 import csu.web.mypetstore.domain.Product;
 import csu.web.mypetstore.service.CatalogService;
+import csu.web.mypetstore.service.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +36,18 @@ public class ItemFormServlet extends HttpServlet {
         session.setAttribute("product",product);
 
         session.setAttribute("item",item);
+        if(account != null){
+            HttpServletRequest httpRequest= req;
+            String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                    + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+            LogService logService = new LogService();
+//最后加入的信息“XXXXX”应当为该界面的信息以及一些商品信息
+            String time = logService.logInfo(" ") ;
+            String page=strBackUrl;
+            logService.insertLogInfo(account.getUsername(), time,page,"浏览商品"+itemId);
+
+        }
 
         req.getRequestDispatcher(ITEM_FORM).forward(req,resp);
     }

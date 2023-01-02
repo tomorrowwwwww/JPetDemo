@@ -17,10 +17,9 @@ public class SignOutFormServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-//日志
+        //日志
         HttpSession httpSession = req.getSession();
         Account account = (Account)httpSession.getAttribute("loginAccount");
-
         if(account != null){
             HttpServletRequest httpRequest= req;
             String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
@@ -28,8 +27,9 @@ public class SignOutFormServlet extends HttpServlet {
 
             LogService logService = new LogService();
 //最后加入的信息“XXXXX”应当为该界面的信息以及一些商品信息
-            String logInfo = logService.logInfo(" ") + strBackUrl + " XXXXX";
-            logService.insertLogInfo(account.getUsername(), logInfo);
+            String time = logService.logInfo(" ") ;
+            String page=strBackUrl;
+            logService.insertLogInfo(account.getUsername(), time,page,"退出登录");
 
         }
         Account loginAccount = null;

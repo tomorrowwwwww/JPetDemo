@@ -1,8 +1,10 @@
 package csu.web.mypetstore.web.servlet;
 
 import com.alibaba.fastjson.JSON;
+import csu.web.mypetstore.domain.Account;
 import csu.web.mypetstore.domain.Cart;
 import csu.web.mypetstore.domain.CartItem;
+import csu.web.mypetstore.service.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -49,6 +51,23 @@ public class UpdateCartServlet extends HttpServlet {
         session.setAttribute("cart", cart);
         Iterator<CartItem> cartItemIterator = cart.getAllCartItems();
         List<QuantityAndPrice> qpList = new ArrayList<>();
+
+        //日志
+        HttpSession httpSession = request.getSession();
+        Account account = (Account)httpSession.getAttribute("loginAccount");
+
+        if(account != null){
+            HttpServletRequest httpRequest= request;
+            String strBackUrl = "http://" + request.getServerName() + ":" + request.getServerPort()
+                    + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+            LogService logService = new LogService();
+//最后加入的信息“XXXXX”应当为该界面的信息以及一些商品信息
+            String time = logService.logInfo(" ") ;
+            String page=strBackUrl;
+            logService.insertLogInfo(account.getUsername(), time,page,"更新购物车");
+
+        }
 
         while (cartItemIterator.hasNext()) {
             //产品数量增加

@@ -1,15 +1,11 @@
 package csu.web.mypetstore.service;
 
-import csu.web.mypetstore.domain.*;
+import csu.web.mypetstore.domain.Order;
 import csu.web.mypetstore.persistance.ItemDao;
 import csu.web.mypetstore.persistance.OrderDao;
 import csu.web.mypetstore.persistance.impl.ItemDaoImpl;
 import csu.web.mypetstore.persistance.impl.OrderDaoImpl;
-
-import javax.sound.midi.Sequence;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class OrderService {
     private OrderDao orderDao;

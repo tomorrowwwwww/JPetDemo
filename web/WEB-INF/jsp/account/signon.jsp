@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="css/login.css" type="text/css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="imagetoolbar" content="no">
+    <%--    <meta http-equiv="X-UA-Compatible" content="IE=edge">--%>
+    <%--    <meta name="viewport" content="width=device-width,initial-scale=1.0">--%>
+    <%--    <script src="https://cdn.bootcdn.net/ajax/libs/jquery.min.js"></script>--%>
 </head>
 <body>
 <div id="Catalog" class="box">
@@ -14,29 +17,30 @@
             <div class="container-login100">
                 <div class="wrap-login100">
                     <form class="login100-form validate-form">
-				<span class="login100-form-title" ><font color="#f0f8ff"></font>
-					Login
-				</span>
+            <span class="login100-form-title" ><font color="#f0f8ff"></font>
+               Login
+            </span>
                         <span class="login100-form-title" ><font color="#ff6851" size:10px></font>
-					<c:if test="${requestScope.signOnMsg !=null }">
-                        <font color="#f0f8ff" >${requestScope.signOnMsg}</font>
-                    </c:if>
-				</span>
+               <c:if test="${requestScope.signOnMsg !=null }">
+                   <font color="#f0f8ff" >${requestScope.signOnMsg}</font>
+               </c:if>
+            </span>
                         <div class="wrap-input100 validate-input">
                             <input class="input100" type="text" name="username" placeholder="Account"
                                    id="usernamelogin">
+                            <div id="feedback"></div>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
-								<i class="fa fa-envelope" aria-hidden="true"></i>
-							</span>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                     </span>
                         </div>
                         <span id="usernameloginTips" align="center"></span>
                         <div class="wrap-input100 validate-input">
                             <input class="input100" type="password" name="password" placeholder="Password" id="newpw">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-							</span>
+                     <i class="fa fa-lock" aria-hidden="true"></i>
+                     </span>
                         </div>
 
                         <div class="vcodediv">
@@ -50,7 +54,7 @@
                         </div>
                         <span class="login100-form-title" >
                              <a href="registerForm">Register Now!</a>
-				        </span>
+                    </span>
                     </form>
                 </div>
             </div>
@@ -63,4 +67,5 @@
     <%--        <a href="registerForm">Register Now!</a>--%>
     <%--    </div>--%>
 </div>
+<script src="./js/check-username.js"></script>
 </body>
