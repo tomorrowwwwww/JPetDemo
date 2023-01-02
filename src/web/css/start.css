@@ -1,0 +1,28 @@
+
+body {
+    background-size: 100% 130%;
+}
+
+
+#Content {
+    width: 20%;
+    height: 400px;
+    background-color: #00000060;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 50px 50px;
+}
+a {
+    color: #4652b9;
+}
+
+div {
+    color: #fff;
+}
+
+h2 {
+    color: #ffffff90;
+    margin-top: 5%;
+}
